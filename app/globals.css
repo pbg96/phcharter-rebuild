@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary brand */
+  --blue:           #0C0297;   /* footer, CTA hover, badges */
+  --blue-dark:      #080177;
+  --blue-light:     #1a14b0;
+
+  /* Gold scale */
+  --gold-hover:     #D0902F;   /* nav hover, active items */
+  --gold:           #E8B13B;   /* CTA buttons */
+  --gold-accent:    #F3C03E;   /* icons, highlights */
+
+  /* Text */
+  --dark-navy:      #1A2E3B;   /* section headers, dark text */
+  --midnight-navy:  #120F41;   /* hero/slider headings */
+  --body-text:      #3A3A3A;   /* paragraphs */
+  --nav-text:       #000000;   /* default nav links */
+  --sky-blue:       #0170B9;   /* inline body links */
+
+  /* Backgrounds */
+  --bg-page:        #FFFFFF;
+  --bg-card:        #F5F5F5;
+  --bg-alt:         #E5E5E5;
+
+  /* Layout */
+  --container:      1200px;
+}
+
+@theme inline {
+  /* Wire Inter into Tailwind's font-sans so preflight picks it up on <html> */
+  --font-sans:             var(--font-inter), system-ui, sans-serif;
+
+  --color-phcse-blue:      var(--blue);
+  --color-phcse-gold:      var(--gold);
+  --color-phcse-blue-dark: var(--blue-dark);
+  --color-phcse-navy:      var(--dark-navy);
+  --color-phcse-sky:       var(--sky-blue);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--body-text);
+  background: var(--bg-page);
+}
+
+/* Site-wide container at 1200px */
+.container-site {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Inline links use sky blue */
+.prose a,
+article a {
+  color: var(--sky-blue);
+  text-decoration: underline;
+}
+.prose a:hover,
+article a:hover {
+  color: var(--blue);
+}
+
+/* Scroll reveal base state */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.reveal-hidden.from-left {
+  transform: translateX(-24px);
+}
+
+.reveal-hidden.from-right {
+  transform: translateX(24px);
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* Mobile: shorter travel distance */
+@media (max-width: 767px) {
+  .reveal-hidden {
+    transform: translateY(14px);
+  }
+  .reveal-hidden.from-left {
+    transform: translateX(-14px);
+  }
+  .reveal-hidden.from-right {
+    transform: translateX(14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
