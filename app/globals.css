@@ -6,10 +6,15 @@
   --blue-dark:      #080177;
   --blue-light:     #1a14b0;
 
+  /* Primary-deep (HSL space for gradient alpha usage) */
+  --primary-deep:   240 96% 21%;   /* #08016A — very dark navy */
+  --primary-royal:  241 97% 31%;   /* #0C0297 — royal blue */
+
   /* Gold scale */
   --gold-hover:     #D0902F;   /* nav hover, active items */
   --gold:           #E8B13B;   /* CTA buttons */
-  --gold-accent:    #F3C03E;   /* icons, highlights */
+  --gold-accent:    #F4C03E;   /* icons, highlights, reference secondary */
+  --gold-light:     #F9D05E;   /* lighter gold hover */
 
   /* Text */
   --dark-navy:      #1A2E3B;   /* section headers, dark text */
@@ -105,4 +110,34 @@ article a:hover {
     transform: none;
     transition: none;
   }
+}
+
+/* container-x: full-width gutters, 1280px max */
+.container-x {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Elevated card shadow */
+.shadow-lift {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* News ticker marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Hero content fade-up */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out forwards;
 }

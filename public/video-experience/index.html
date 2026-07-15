@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penn Hills Charter School of Entrepreneurship</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── Loader ─────────────────────────────────────────────────── -->
+  <div id="loader">
+    <img src="https://phcharter.org/wp-content/uploads/2025/08/Picture-%E2%86%92-phcharter_logo.png.bv_.webp.webp"
+         alt="PHCSE" class="loader-logo" />
+    <div class="loader-brand">PHCSE</div>
+    <div class="loader-tagline">Penn Hills Charter School of Entrepreneurship</div>
+    <div class="loader-track"><div id="loader-bar"></div></div>
+    <div id="loader-percent">0%</div>
+  </div>
+
+  <!-- ── Header / Navbar ───────────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+
+    <!-- Utility bar -->
+    <div class="utility-bar">
+      <div class="utility-inner">
+        <div class="utility-left">
+          <a href="tel:4127936471" class="utility-link">412-793-6471</a>
+          <span class="utility-sep">|</span>
+          <a href="mailto:info@phcharter.org" class="utility-link">info@phcharter.org</a>
+        </div>
+        <div class="utility-right">
+          <span>2501 Main Street, Pittsburgh, PA 15235</span>
+          <span class="utility-sep">|</span>
+          <span>Mon–Fri 7:30am–6:00pm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main nav -->
+    <div class="main-nav">
+      <div class="nav-inner">
+
+        <!-- Logo -->
+        <a href="/" class="nav-logo-wrap">
+          <img src="https://phcharter.org/wp-content/uploads/2025/08/Picture-%E2%86%92-phcharter_logo.png.bv_.webp.webp"
+               alt="PHCSE Logo" class="nav-logo-img" />
+          <span class="nav-logo-text">Penn Hills Charter School<br>of Entrepreneurship</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="desktop-nav" id="desktop-nav">
+
+          <a href="/" class="nav-item">Home</a>
+
+          <div class="nav-group" data-group="about">
+            <button class="nav-item nav-has-dropdown" data-toggle="about">
+              About
+              <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </button>
+            <div class="dropdown" id="dropdown-about">
+              <a href="/about" class="dropdown-item">About Us</a>
+              <a href="/leadership-team" class="dropdown-item">Leadership Team</a>
+              <a href="/board-of-trustees" class="dropdown-item">Board of Trustees</a>
+              <a href="/letter-from-our-ceo" class="dropdown-item">Letter from CEO</a>
+              <a href="/charter" class="dropdown-item">Charter</a>
+            </div>
+          </div>
+
+          <div class="nav-group" data-group="programs">
+            <button class="nav-item nav-has-dropdown" data-toggle="programs">
+              Programs
+              <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </button>
+            <div class="dropdown" id="dropdown-programs">
+              <a href="/microsociety" class="dropdown-item">MicroSociety</a>
+              <a href="/constitution" class="dropdown-item">Constitution</a>
+              <a href="/bill-of-rights" class="dropdown-item">Bill of Rights</a>
+              <a href="/ventures-agencies" class="dropdown-item">Ventures &amp; Agencies</a>
+              <a href="/legislature" class="dropdown-item">Legislature</a>
+            </div>
+          </div>
+
+          <div class="nav-group" data-group="parents">
+            <button class="nav-item nav-has-dropdown" data-toggle="parents">
+              Parents
+              <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </button>
+            <div class="dropdown" id="dropdown-parents">
+              <a href="/parents" class="dropdown-item">Parents &amp; Guardians</a>
+              <a href="/academic-resources" class="dropdown-item">Academic Resources</a>
+              <a href="/health-wellness" class="dropdown-item">Health &amp; Wellness</a>
+              <a href="/special-education" class="dropdown-item">Special Education</a>
+              <a href="/plans-for-success" class="dropdown-item">Plans for Success</a>
+              <a href="/safe-2-say-something" class="dropdown-item">Safe 2 Say Something</a>
+            </div>
+          </div>
+
+          <a href="/careers" class="nav-item">Careers</a>
+          <a href="/contact" class="nav-item">Contact</a>
+
+        </nav>
+
+        <!-- CTA buttons -->
+        <div class="nav-actions">
+          <a href="/donate" class="nav-donate">Donate</a>
+          <a href="https://www.enrollphcharter.org/school-tours#SchoolTourForm"
+             target="_blank" rel="noopener noreferrer" class="nav-enroll">Enroll Now</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <svg id="icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/" class="mobile-link-main">Home</a>
+      <a href="/about" class="mobile-link-main">About</a>
+      <a href="/leadership-team" class="mobile-link-sub">Leadership Team</a>
+      <a href="/board-of-trustees" class="mobile-link-sub">Board of Trustees</a>
+      <a href="/microsociety" class="mobile-link-main">Programs</a>
+      <a href="/microsociety" class="mobile-link-sub">MicroSociety</a>
+      <a href="/bill-of-rights" class="mobile-link-sub">Bill of Rights</a>
+      <a href="/parents" class="mobile-link-main">Parents</a>
+      <a href="/academic-resources" class="mobile-link-sub">Academic Resources</a>
+      <a href="/careers" class="mobile-link-main">Careers</a>
+      <a href="/contact" class="mobile-link-main">Contact</a>
+      <div class="mobile-ctas">
+        <a href="/donate" class="mobile-donate">Donate</a>
+        <a href="https://www.enrollphcharter.org/school-tours#SchoolTourForm"
+           target="_blank" rel="noopener noreferrer" class="mobile-enroll">Enroll Now</a>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ── Hero Slider ────────────────────────────────────────────── -->
+  <section id="hero" aria-roledescription="carousel" aria-label="PHCSE Featured Content">
+
+    <!-- Slide frames -->
+    <div class="slide slide-active" data-slide="0">
+      <img src="https://phcharter.org/wp-content/uploads/slider/cache/3c5f46555361ccaefa6709fd090d0244/50-DSC_6053-scaled.jpg"
+           alt="Graduation Photo Galleries" loading="eager" />
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide" data-slide="1">
+      <img src="https://phcharter.org/wp-content/uploads/slider/cache/7d5d7a7c11c03bad186d8d1579840370/AdobeStock_498257463-scaled.jpg"
+           alt="McKinney-Vento Support" loading="lazy" />
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide" data-slide="2">
+      <img src="https://phcharter.org/wp-content/uploads/slider/cache/d2c0cfa289c31402330a50bd0b2cd040/Frame-37.png"
+           alt="Preparing Young Scholars" loading="lazy" />
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide" data-slide="3">
+      <img src="https://phcharter.org/wp-content/uploads/slider/cache/73671af180a25b98318857a98c295d58/Firefly_Gemini-Flash_Could-you-upscale-this-image-175388.png"
+           alt="Real-world entrepreneurship" loading="lazy" />
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide" data-slide="4">
+      <img src="https://phcharter.org/wp-content/uploads/slider/cache/1edf1855d3ba5642c24afacd791ff60d/School-Breakfast-Challenge-Desktop.png"
+           alt="School Breakfast Challenge" loading="lazy" />
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide" data-slide="5">
+      <img src="https://phcharter.org/wp-content/uploads/slider/cache/b28bde4b23480a0254f1ce31bddfcc4b/CBS-News.png"
+           alt="Featured in CBS News" loading="lazy" />
+      <div class="slide-overlay"></div>
+    </div>
+
+    <!-- Content (updated by JS per slide) -->
+    <div class="hero-content-wrap">
+      <div class="hero-content-main" id="hero-content">
+        <h1 class="hero-heading" id="hero-heading"></h1>
+        <p class="hero-subhead" id="hero-subhead"></p>
+        <p class="hero-body-text" id="hero-body"></p>
+        <div class="hero-ctas" id="hero-ctas"></div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span class="scroll-label">Scroll to explore</span>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="slider-arrow slider-prev" id="slider-prev" aria-label="Previous slide">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <button class="slider-arrow slider-next" id="slider-next" aria-label="Next slide">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="slider-dots" id="slider-dots">
+      <button class="dot dot-active" data-dot="0" aria-label="Slide 1"></button>
+      <button class="dot" data-dot="1" aria-label="Slide 2"></button>
+      <button class="dot" data-dot="2" aria-label="Slide 3"></button>
+      <button class="dot" data-dot="3" aria-label="Slide 4"></button>
+      <button class="dot" data-dot="4" aria-label="Slide 5"></button>
+      <button class="dot" data-dot="5" aria-label="Slide 6"></button>
+    </div>
+
+  </section>
+
+  <!-- ── Canvas (fixed, behind sections) ───────────────────────── -->
+  <div id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- ── Dark Overlay (stats) ──────────────────────────────────── -->
+  <div id="dark-overlay"></div>
+
+  <!-- ── Marquee ────────────────────────────────────────────────── -->
+  <div id="marquee" class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-text">SOARING&nbsp;TO&nbsp;SUCCESS&nbsp;·&nbsp;ENTREPRENEURSHIP&nbsp;·&nbsp;INNOVATION&nbsp;·&nbsp;PITTSBURGH&nbsp;·&nbsp;K–8&nbsp;·&nbsp;WHERE&nbsp;STUDENTS&nbsp;LEAD&nbsp;·&nbsp;SOARING&nbsp;TO&nbsp;SUCCESS&nbsp;·&nbsp;ENTREPRENEURSHIP&nbsp;·&nbsp;INNOVATION&nbsp;·&nbsp;PITTSBURGH&nbsp;·&nbsp;K–8&nbsp;·&nbsp;WHERE&nbsp;STUDENTS&nbsp;LEAD&nbsp;·</div>
+  </div>
+
+  <!-- ── Scroll Sections ────────────────────────────────────────── -->
+  <section class="scroll-section section-content align-left"
+           data-enter="14" data-leave="30" data-animation="fade-up">
+    <div class="section-inner">
+      <span class="section-label">001 &nbsp;/&nbsp; About</span>
+      <h2 class="section-heading">Where Entrepreneurs Are Born</h2>
+      <p class="section-body">Since 2011, PHCSE has educated hundreds of students from 15+ school districts — giving every child a real-world classroom and a lifetime of skills.</p>
+    </div>
+  </section>
+
+  <section class="scroll-section section-content align-right"
+           data-enter="30" data-leave="46" data-animation="slide-right">
+    <div class="section-inner">
+      <span class="section-label">002 &nbsp;/&nbsp; Learning</span>
+      <h2 class="section-heading">Real-World Learning, Every Day</h2>
+      <p class="section-body">From running their own businesses in MicroSociety® to pitching at Soaring Shark Tank, our students don't just study entrepreneurship — they live it.</p>
+    </div>
+  </section>
+
+  <section class="scroll-section section-content align-left"
+           data-enter="46" data-leave="60" data-animation="slide-left">
+    <div class="section-inner">
+      <span class="section-label">003 &nbsp;/&nbsp; Innovation</span>
+      <h2 class="section-heading">STEM Meets Business</h2>
+      <p class="section-body">Our interdisciplinary curriculum weaves entrepreneurship into every subject — building complete thinkers, creative problem-solvers, and future leaders.</p>
+    </div>
+  </section>
+
+  <section class="scroll-section section-stats"
+           data-enter="58" data-leave="74" data-animation="stagger-up">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-value">
+          <span class="stat-number" data-value="15" data-counter="true">0</span><span class="stat-suffix">+</span>
+        </div>
+        <span class="stat-label">School Districts</span>
+      </div>
+      <div class="stat">
+        <div class="stat-value"><span class="stat-display">2011</span></div>
+        <span class="stat-label">Year Founded</span>
+      </div>
+      <div class="stat">
+        <div class="stat-value">
+          <span class="stat-number" data-value="300" data-counter="true">0</span><span class="stat-suffix">+</span>
+        </div>
+        <span class="stat-label">Students</span>
+      </div>
+      <div class="stat">
+        <div class="stat-value"><span class="stat-display">K–8</span></div>
+        <span class="stat-label">Grade Levels</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="scroll-section section-cta"
+           data-enter="76" data-leave="92" data-animation="clip-reveal" data-persist="true">
+    <div class="cta-inner">
+      <span class="section-label">Enroll Today</span>
+      <h2 class="section-heading">Your Child's Story<br>Starts Here</h2>
+      <p class="section-body">Penn Hills Charter School of Entrepreneurship — where every student discovers the pathway to lifelong success.</p>
+      <div class="cta-buttons">
+        <a href="https://www.enrollphcharter.org/school-tours#SchoolTourForm"
+           target="_blank" rel="noopener" class="cta-button primary">Enroll Now</a>
+        <a href="/" class="cta-button secondary">Visit School Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Scroll Space (1000vh driver) ──────────────────────────── -->
+  <div id="scroll-space"></div>
+
+  <!-- ── Newsletter Section ─────────────────────────────────────── -->
+  <section class="newsletter-section">
+    <div class="newsletter-bg-overlay"></div>
+    <div class="newsletter-inner">
+      <div class="newsletter-left">
+        <span class="newsletter-eyebrow">What's Going On?</span>
+        <div class="newsletter-divider"></div>
+        <h2 class="newsletter-heading">Stay updated on the latest PHCSE news &amp; more!</h2>
+      </div>
+      <div class="newsletter-right">
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email address" class="newsletter-input" />
+        </form>
+        <div class="newsletter-btns">
+          <button class="nl-btn-primary">Subscribe</button>
+          <a href="https://phcharter.org" target="_blank" rel="noopener noreferrer"
+             class="nl-btn-secondary">View Newsletter</a>
+        </div>
+        <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="https://phcharter.org/wp-content/uploads/2025/08/Picture-%E2%86%92-phcharter_logo.png.bv_.webp.webp"
+             alt="PHCSE Logo" class="footer-logo" />
+        <p class="footer-name">Penn Hills Charter School of Entrepreneurship</p>
+        <p class="footer-tagline">Preparing Young Scholars For The First 21st Century And Beyond</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3 class="footer-col-heading">Contact</h3>
+        <address class="footer-address">
+          <p>2501 Main Street</p>
+          <p>Pittsburgh, PA 15235</p>
+          <p><a href="tel:4127936471">412-793-6471</a></p>
+          <p>Fax: 412-793-6473</p>
+          <p><a href="mailto:info@phcharter.org">info@phcharter.org</a></p>
+          <p class="footer-hours">Mon–Fri 7:30am–6:00pm</p>
+        </address>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-col-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/microsociety">MicroSociety</a></li>
+          <li><a href="/leadership-team">Leadership Team</a></li>
+          <li><a href="/board-of-trustees">Board of Trustees</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/plans-for-success">Plans for Success</a></li>
+          <li><a href="/annual-budget">Budgets &amp; Audits</a></li>
+          <li><a href="/right-to-know">Right to Know</a></li>
+        </ul>
+      </div>
+
+      <!-- Enroll + Social -->
+      <div class="footer-col">
+        <h3 class="footer-col-heading">Enroll</h3>
+        <p class="footer-enroll-text">Open enrollment available to all Pennsylvania families.</p>
+        <a href="https://www.enrollphcharter.org/school-tours#SchoolTourForm"
+           target="_blank" rel="noopener noreferrer" class="footer-enroll-btn">Enroll Now</a>
+        <div class="footer-social">
+          <h3 class="footer-col-heading footer-col-heading--social">Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon">F</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon">T</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon">in</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon">YT</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>© 2025 Penn Hills Charter School of Entrepreneurship</p>
+        <div class="footer-legal">
+          <a href="/right-to-know">Right to Know</a>
+          <a href="/title-ix">Title IX</a>
+          <a href="/contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ───────────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

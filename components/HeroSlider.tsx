@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 
 interface Slide {
   image: string
@@ -37,7 +38,7 @@ const slides: Slide[] = [
   {
     image: 'https://phcharter.org/wp-content/uploads/slider/cache/73671af180a25b98318857a98c295d58/Firefly_Gemini-Flash_Could-you-upscale-this-image-175388.png',
     headline: 'Building confidence through real-world entrepreneurship',
-    subheadline: 'As featured in',
+    subheadline: 'As featured in TribLive',
     ctas: [
       { label: 'Read Article', href: 'https://triblive.com/local/penn-hills/microsociety-builds-confidence-challenges-students-at-penn-hills-charter-school-of-entrepreneurship/', variant: 'gold' },
     ],
@@ -57,69 +58,84 @@ const slides: Slide[] = [
 export function HeroSlider() {
   const [current, setCurrent] = useState(0)
 
-  const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), [])
-  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length)
+  const goNext = useCallback(() => setCurrent((c) => (c + 1) % slides.length), [])
+  const goPrev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length)
 
   useEffect(() => {
-    const timer = setInterval(next, 5000)
+    const timer = setInterval(goNext, 5000)
     return () => clearInterval(timer)
-  }, [next])
+  }, [goNext])
 
   const slide = slides[current]
 
   return (
-    <div className="relative w-full h-[600px] md:h-[600px] h-[350px] overflow-hidden bg-gray-900">
+    <div className="relative w-full h-[450px] md:h-[611px] overflow-hidden bg-[#08016A]">
       {/* Slides */}
       {slides.map((s, i) => (
         <div
           key={i}
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-          style={{
-            backgroundImage: `url(${s.image})`,
-            opacity: i === current ? 1 : 0,
-          }}
-        />
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <Image
+            src={s.image}
+            alt={s.headline}
+            fill
+            priority={i === 0}
+            className={`object-cover transition-transform duration-[6000ms] ${
+              i === current ? 'scale-105' : 'scale-100'
+            }`}
+          />
+          {/* Directional gradient — deep navy sweeps from left, fades right */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(78.0647deg, hsl(240 96% 21%) 21.775%, hsl(240 96% 21% / 0) 100%)',
+            }}
+          />
+        </div>
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/45" />
-
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-16 max-w-4xl">
-        <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg">
-          {slide.headline}
-        </h2>
-        {slide.subheadline && (
-          <p className="text-white/90 text-lg md:text-xl mt-3 font-medium">{slide.subheadline}</p>
-        )}
-        {slide.body && (
-          <p className="text-white/80 text-sm md:text-base mt-3 max-w-2xl leading-relaxed">{slide.body}</p>
-        )}
-        {slide.ctas && (
-          <div className="flex flex-wrap gap-3 mt-6">
-            {slide.ctas.map((cta) => (
-              <a
-                key={cta.label + cta.href}
-                href={cta.href}
-                target={cta.href.startsWith('http') ? '_blank' : undefined}
-                rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className={`px-6 py-3 rounded font-semibold text-sm transition-all ${
-                  cta.variant === 'gold'
-                    ? 'bg-[#E8B13B] text-gray-900 hover:bg-yellow-400'
-                    : 'border-2 border-white text-white hover:bg-white/10'
-                }`}
-              >
-                {cta.label}
-              </a>
-            ))}
-          </div>
-        )}
+      <div className="relative z-10 h-full flex items-center px-6 md:px-12 max-w-[1200px] mx-auto">
+        {/* key triggers re-mount → re-runs animate-fade-up on slide change */}
+        <div key={current} className="w-full max-w-[628px] text-white animate-fade-up flex flex-col gap-[22px]">
+          <h2 className="font-bold text-white text-2xl md:text-4xl lg:text-[45px] leading-tight lg:leading-[58.5px] drop-shadow">
+            {slide.headline}
+          </h2>
+          {slide.subheadline && (
+            <p className="text-white/90 text-lg md:text-xl font-medium">{slide.subheadline}</p>
+          )}
+          {slide.body && (
+            <p className="text-white/80 text-sm md:text-base leading-relaxed">{slide.body}</p>
+          )}
+          {slide.ctas && (
+            <div className="flex flex-wrap gap-[19px] pt-1">
+              {slide.ctas.map((cta) => (
+                <a
+                  key={cta.label + cta.href}
+                  href={cta.href}
+                  target={cta.href.startsWith('http') ? '_blank' : undefined}
+                  rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className={`inline-flex items-center justify-center font-semibold h-[47px] min-w-[157px] px-6 text-sm transition-all hover:-translate-y-0.5 ${
+                    cta.variant === 'gold'
+                      ? 'bg-[#F4C03E] hover:bg-[#E8B13B] text-[#08016A]'
+                      : 'border-2 border-white text-white hover:bg-white/10'
+                  }`}
+                >
+                  {cta.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Arrows */}
       <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+        onClick={goPrev}
+        className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center transition-colors"
         aria-label="Previous slide"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,8 +143,8 @@ export function HeroSlider() {
         </svg>
       </button>
       <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+        onClick={goNext}
+        className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center transition-colors"
         aria-label="Next slide"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,13 +152,15 @@ export function HeroSlider() {
         </svg>
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+      {/* Dots — pill-shaped when active */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? 'bg-[#E8B13B]' : 'bg-white/60'}`}
+            className={`h-2 rounded-full transition-all ${
+              i === current ? 'w-10 bg-[#F4C03E]' : 'w-2 bg-white/50 hover:bg-white/80'
+            }`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
